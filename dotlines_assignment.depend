@@ -1,7 +1,10 @@
 # depslib dependency file v1.0
-1701603194 source:c:\users\hp\desktop\new folder\dotlines_assignment\main.cpp
+1701617854 source:c:\users\hp\desktop\new folder\dotlines_assignment\main.cpp
 	<iostream>
 	<winsock2.h>
+	"lib/data_struct.hpp"
+	"lib/email_validator.hpp"
+	"lib/database_handler.hpp"
 
 1701607026 source:c:\users\hp\desktop\new folder\dotlines_assignment\email_validator.cpp
 	"lib/email_validator.hpp"
@@ -10,4 +13,73 @@
 
 1701606917 c:\users\hp\desktop\new folder\dotlines_assignment\lib\email_validator.hpp
 	<string>
+
+1701606186 c:\users\hp\desktop\new folder\dotlines_assignment\lib\data_struct.hpp
+	<string>
+
+1701617892 c:\users\hp\desktop\new folder\dotlines_assignment\lib\database_handler.hpp
+	<string>
+	"data_struct.hpp"
+
+1701620289 source:c:\users\hp\desktop\new folder\dotlines_assignment\database_handler.cpp
+	<iostream>
+	<string>
+	"lib/data_struct.hpp"
+	"lib/database_handler.hpp"
+	<jdbc/mysql_driver.h>
+	<jdbc/mysql_connection.h>
+
+1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\mysql_driver.h
+	"cppconn/driver.h"
+	<memory>
+
+1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\cppconn\driver.h
+	"connection.h"
+	"build_config.h"
+	"callback.h"
+
+1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\cppconn\connection.h
+	<map>
+	"build_config.h"
+	"warning.h"
+	"sqlstring.h"
+	"variant.h"
+
+1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\cppconn\build_config.h
+
+1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\cppconn\warning.h
+	<stdexcept>
+	<string>
+	<memory>
+	"sqlstring.h"
+
+1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\cppconn\sqlstring.h
+	<string>
+	<algorithm>
+	"build_config.h"
+	<iostream>
+
+1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\cppconn\variant.h
+	<string>
+	<map>
+	<list>
+	<algorithm>
+	<typeinfo>
+	"build_config.h"
+	"sqlstring.h"
+	"exception.h"
+
+1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\cppconn\exception.h
+	"build_config.h"
+	<stdexcept>
+	<string>
+	<memory>
+
+1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\cppconn\callback.h
+	"sqlstring.h"
+	<functional>
+
+1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\mysql_connection.h
+	"cppconn/connection.h"
+	<memory>
 

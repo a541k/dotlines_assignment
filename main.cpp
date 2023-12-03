@@ -2,6 +2,7 @@
 #include<winsock2.h>
 #include "lib/data_struct.hpp"
 #include "lib/email_validator.hpp"
+#include "lib/database_handler.hpp"
 
 
 using namespace std;
@@ -9,15 +10,18 @@ using namespace std;
 const int PORT=2222;
 
 int main(){
-    /*******
+    /******* //email test
     Data user1 = {77, "ashik", "mahmud", "ashik@test.com", "2014-05-28 11:30:10", "2014-05-29 12:30:10", 12};
     string email(user1.email);
     cout<<validate(email)<<endl;
     *******/
 
+    //database test
+    Data user1 = {77, "ashik", "mahmud", "ashik@test.com", "2014-05-28 11:30:10", "2014-05-29 12:30:10", 12};
+    send_to_database(user1);
 
 
-    //**************
+    /**************
     //cout<<"This is server socket program"<<endl;
     //  SOCKET CREATION--------
     //init wsadata
@@ -129,6 +133,6 @@ int main(){
     closesocket(server_socket);
     WSACleanup();
 
-    //*************************************************************/
+    *************************************************************/
     return 0;
 }
