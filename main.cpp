@@ -17,11 +17,11 @@ int main(){
     *******/
 
     //database test
-    Data user1 = {77, "ashik", "mahmud", "ashik@test.com", "2014-05-28 11:30:10", "2014-05-29 12:30:10", 12};
-    send_to_database(user1);
+    //Data user1 = {77, "ashik", "mahmud", "ashik@test.com", "2014-05-28 11:30:10", "2014-05-29 12:30:10", 12};
+    //send_to_database(user1);
 
 
-    /**************
+    //**************
     //cout<<"This is server socket program"<<endl;
     //  SOCKET CREATION--------
     //init wsadata
@@ -121,6 +121,7 @@ int main(){
                 if(validate(email)){
                     //database query
                     cout<<endl<<endl<<"valid email updating database"<<endl;
+                    send_to_database(receivedData);
                 }
                 else{
                     cout<<"the email is invalid"<<endl;
@@ -133,6 +134,6 @@ int main(){
     closesocket(server_socket);
     WSACleanup();
 
-    *************************************************************/
+    //*************************************************************/
     return 0;
 }

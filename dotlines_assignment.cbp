@@ -31,12 +31,16 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="../../../../../Program Files (x86)/Dev-Cpp/MinGW64/include" />
 		</Compiler>
 		<Linker>
 			<Add library="ws2_32" />
+			<Add library="../../../../../Program Files (x86)/Dev-Cpp/MinGW64/lib/libmysql.a" />
 		</Linker>
+		<Unit filename="database_handler.cpp" />
 		<Unit filename="email_validator.cpp" />
 		<Unit filename="lib/data_struct.hpp" />
+		<Unit filename="lib/database_handler.hpp" />
 		<Unit filename="lib/email_validator.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>

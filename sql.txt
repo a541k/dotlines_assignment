@@ -1,0 +1,1 @@
+INSERT INTO `user_info`(`id`, `first_name`, `last_name`, `email`, `subscription_time`, `last_entry_time`,`view_time`) VALUES (77,ashik,mahmud,ashik@test.com,2014-05-28 11:30:10,2014-05-29 12:30:10,12)
