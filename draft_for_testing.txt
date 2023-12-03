@@ -1,0 +1,24 @@
+for email validating-------------------
+    vector<string> testCase = {
+            "test.com",
+            "abc@gmail.com",
+            "abctest@gmail.com",
+            "a@test.cc",
+            "fa@test.c",
+            "afhs.hfs.@test.cc",
+            "afk.sjk.fhk@test-er.cc",
+            "fa@test.c",
+            "ffh-fk_fh@.test-hello.-com"
+        };
+        for(int i=1; i<testCase.size(); i++){
+            cout<<i<<" : "<<testCase[i-1]<<endl;
+            cout<<validate(testCase[i-1])<<endl;
+        }
+
+Data sample-------------------------------------
+    Data user1 = {77, "ashik", "mahmud", "ashik@test.com", "2014-05-28 11:30:10", "2014-05-29 12:30:10", 12};
+
+
+runnables--------------------------
+dotlines_assignment.exe
+client.exe

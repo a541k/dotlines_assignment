@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1701603194 source:c:\users\hp\desktop\new folder\dotlines_assignment\main.cpp
+	<iostream>
+	<winsock2.h>
+
+1701607026 source:c:\users\hp\desktop\new folder\dotlines_assignment\email_validator.cpp
+	"lib/email_validator.hpp"
+	<iostream>
+	<string>
+
+1701606917 c:\users\hp\desktop\new folder\dotlines_assignment\lib\email_validator.hpp
+	<string>
+
