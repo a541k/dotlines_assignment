@@ -2,7 +2,7 @@
 Assignment for Software Development Team - Deadline: December 5, 2023
 
 # NB>
-## Database is exported in the database directory should be imported for the use
+## Database is exported in the database directory should be imported for the use. This is the server socket.
 ## client socket program that sends data is a seperate project from this and will be in different git repo
 
 
