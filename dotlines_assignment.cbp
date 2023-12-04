@@ -42,7 +42,9 @@
 		<Unit filename="lib/data_struct.hpp" />
 		<Unit filename="lib/database_handler.hpp" />
 		<Unit filename="lib/email_validator.hpp" />
+		<Unit filename="lib/print_data_struct.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="print_data_struct.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

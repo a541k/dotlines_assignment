@@ -2,6 +2,9 @@
 #define DATA_STRUCT_HPP
 
 #include <string>
+#include <iomanip>
+
+using namespace std;
 
 struct Data
 {
@@ -14,7 +17,6 @@ struct Data
 	unsigned long view_time;
     /* data */
 };
-
 
 
 #endif

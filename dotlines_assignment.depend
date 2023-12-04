@@ -1,12 +1,15 @@
 # depslib dependency file v1.0
-1701617854 source:c:\users\hp\desktop\new folder\dotlines_assignment\main.cpp
+1701685164 source:c:\users\hp\desktop\new folder\dotlines_assignment\main.cpp
 	<iostream>
 	<winsock2.h>
 	"lib/data_struct.hpp"
 	"lib/email_validator.hpp"
 	"lib/database_handler.hpp"
+	<iomanip>
+	"lib/print_data_struct.hpp"
+	<vector>
 
-1701607026 source:c:\users\hp\desktop\new folder\dotlines_assignment\email_validator.cpp
+1701685304 source:c:\users\hp\desktop\new folder\dotlines_assignment\email_validator.cpp
 	"lib/email_validator.hpp"
 	<iostream>
 	<string>
@@ -14,14 +17,15 @@
 1701606917 c:\users\hp\desktop\new folder\dotlines_assignment\lib\email_validator.hpp
 	<string>
 
-1701606186 c:\users\hp\desktop\new folder\dotlines_assignment\lib\data_struct.hpp
+1701678039 c:\users\hp\desktop\new folder\dotlines_assignment\lib\data_struct.hpp
 	<string>
+	<iomanip>
 
 1701617892 c:\users\hp\desktop\new folder\dotlines_assignment\lib\database_handler.hpp
 	<string>
 	"data_struct.hpp"
 
-1701628197 source:c:\users\hp\desktop\new folder\dotlines_assignment\database_handler.cpp
+1701685087 source:c:\users\hp\desktop\new folder\dotlines_assignment\database_handler.cpp
 	<iostream>
 	<string>
 	"lib/data_struct.hpp"
@@ -106,4 +110,15 @@
 1476070170 c:\program files (x86)\dev-cpp\mingw64\include\my_list.h
 
 1476070178 c:\program files (x86)\dev-cpp\mingw64\include\my_alloc.h
+
+1701680408 c:\users\hp\desktop\new folder\dotlines_assignment\lib\print_data_struct.hpp
+	"data_struct.hpp"
+
+1701682676 source:c:\users\hp\desktop\new folder\dotlines_assignment\print_data_struct.cpp
+	"lib/data_struct.hpp"
+	"lib/print_data_struct.hpp"
+	<iostream>
+	<iomanip>
+	<algorithm>
+	<string>
 

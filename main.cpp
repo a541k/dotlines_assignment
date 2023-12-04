@@ -3,29 +3,32 @@
 #include "lib/data_struct.hpp"
 #include "lib/email_validator.hpp"
 #include "lib/database_handler.hpp"
+#include <iomanip>
+#include "lib/print_data_struct.hpp"
+#include <vector>
 
 
 using namespace std;
 
 const int PORT=2222;
 
-int main(){
+int main()
+{
 
-    ///*
-    try{
+    //****************************
+    try
+    {
 
         WSADATA wsData;
-        if(WSAStartup(MAKEWORD(2,2), &wsData) != 0){
-            //cout<<"wsaData init failed"<<endl;
-            //return 0;
+        if(WSAStartup(MAKEWORD(2,2), &wsData) != 0)
+        {
             throw "wsaData init failed";
         }
         //server file descriptor
         int server_socket = socket(AF_INET, SOCK_DGRAM, 0); //tcp-SOCK_STREAM
-        if(server_socket == INVALID_SOCKET){
-            //cout<<"socket creation failed"<<endl;
+        if(server_socket == INVALID_SOCKET)
+        {
             WSACleanup();
-            //return 0;
             throw "socket creation failed";
         }
 
@@ -42,12 +45,11 @@ int main(){
 
 
         //bind
-        if(bind(server_socket, (sockaddr*)&server_address, sizeof(server_address)) ==-1){
-            //cout<<"binding error"<<endl;
+        if(bind(server_socket, (sockaddr*)&server_address, sizeof(server_address)) ==-1)
+        {
             closesocket(server_socket);
             WSACleanup();
             throw "binding error";
-            //return 0;
         }
         cout<<"binded socket successfully"<<endl;
 
@@ -66,7 +68,8 @@ int main(){
         int addrSize = sizeof(client_address);
 
 
-        while(true){
+        while(true)
+        {
             cout<<endl<<"listening..."<<endl;
 
             fd_set readSet;
@@ -77,55 +80,68 @@ int main(){
             //select
             int result = select(0, &readSet, NULL, NULL, &timeout);
 
-            if(result == SOCKET_ERROR){
+            if(result == SOCKET_ERROR)
+            {
                 //error
-                //cout <<"Error in select: "<<WSAGetLastError()<<endl;
-                //break;
                 WSACleanup();
                 closesocket(server_socket);
                 throw "Error in select";
             }
-            else if(result == 0){
+            else if(result == 0)
+            {
                 // Timeout reached, no data received
                 cout<<"Timeout reached. No data received within "<<idle_shut_down_time<<" seconds."<<endl;
                 closesocket(server_socket);
                 WSACleanup();
                 break;
             }
-            else{
+            else
+            {
                 // Data is ready to be received
                 //listen in case of tcp
                 int bytesRead = recvfrom(server_socket, buffer, sizeof(buffer), 0, (sockaddr*)&client_address, &addrSize);
-                if(bytesRead == SOCKET_ERROR){
+                if(bytesRead == SOCKET_ERROR)
+                {
                     cout<<"Error receiving data: "<<WSAGetLastError()<<endl;
                     //WSACleanup();
                     //closesocket(server_socket);
                     //throw "Error receiving data";
                 }
-                else{
+                else
+                {
                     //buffer[bytesRead] = '\0'; // Null-terminate the received data
                     //cout<<"Received data from client: "<<buffer<<endl;
 
                     //Data
-                    cout<<endl<<endl<<"<<<<Recieved data from a user>>>>"<<endl;
+                    cout<<endl<<endl<<setw(25)<<right<<"<"<<"<<<Recieved data from a user>>>>"<<endl<<endl;
+
                     Data receivedData;
                     memcpy(&receivedData, buffer, sizeof(receivedData));
-                    cout<<"ID: "<<receivedData.user_id<<" >> "<<receivedData.first_name<<" "<<receivedData.last_name<<endl;
-                    cout<<receivedData.email<<endl;
-                    cout<<receivedData.subscription_time<<endl;
-                    cout<<receivedData.view_time<<endl;
-                    cout<<receivedData.last_entry_time<<endl;
+
+                    //print the received data
+                    print_data(receivedData);
 
 
                     //check email validity
                     string email(receivedData.email);
-                    if(validate(email)){
+
+                    if(validate(email))//true -- valid email
+                    {
                         //database query
-                        cout<<endl<<endl<<"valid email updating database"<<endl;
-                        send_to_database(receivedData);
+
+                        cout<<endl<<"\t\t\t >>valid email updating database"<<endl;
+
+
+                        if(!send_to_database(receivedData)){
+                            cout<<endl<<"\t\t\t >>could not update database"<<endl;
+                        }
+                        else{
+                            cout<<endl<<"\t\t\t >>updated database"<<endl;
+                        }
                     }
-                    else{
-                        cout<<"the email is invalid"<<endl;
+                    else//false -- invalid email
+                    {
+                        cout<<endl<<"\t\t\t >>the email is invalid"<<endl;
                         //throw "invalid email recieved";
                     }
                 }
@@ -136,35 +152,49 @@ int main(){
         closesocket(server_socket);
         WSACleanup();
     }
-    //*************************************************************/
 
 
-    catch(const char* errorMessage){
+
+    catch(const char* errorMessage)
+    {
         cout<<errorMessage<<endl;
     }
+    //***********************************/
 
 
 
 
 
 
-     /******* //email test
+    /******* //email test
     Data user1 = {77, "ashik", "mahmud", "ashik@test.com", "2014-05-28 11:30:10", "2014-05-29 12:30:10", 12};
     string email(user1.email);
     cout<<validate(email)<<endl;
     *******/
 
+    //email validation test case
+    /*
+    vector<string> testCase = {
+        "test.com",
+        "abc@gmail.com",
+        "abctest@gmail.com",
+        "a@test.cc",
+        "fa@test.c",
+        "afhs.hfs.@test.cc",
+        "afk.sjk.fhk@test-er.cc",
+        "fa@test.c",
+        "ffh-fk_fh@.test-hello.-com"
+    };
+
+    for(int i=1; i<testCase.size(); i++){
+        cout<<i<<" : "<<testCase[i-1]<<endl;
+        cout<<validate(testCase[i-1])<<endl;
+    }
+    */
+
     //database test
     //Data user1 = {77, "ashik", "mahmud", "ashik@test.com", "2014-05-28 11:30:10", "2014-05-29 12:30:10", 12};
     //send_to_database(user1);
-
-
-
-
-    //**************
-    //cout<<"This is server socket program"<<endl;
-    //  SOCKET CREATION--------
-    //init wsadata
 
 
 
