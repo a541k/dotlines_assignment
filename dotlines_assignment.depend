@@ -21,13 +21,14 @@
 	<string>
 	"data_struct.hpp"
 
-1701620289 source:c:\users\hp\desktop\new folder\dotlines_assignment\database_handler.cpp
+1701628197 source:c:\users\hp\desktop\new folder\dotlines_assignment\database_handler.cpp
 	<iostream>
 	<string>
 	"lib/data_struct.hpp"
 	"lib/database_handler.hpp"
-	<jdbc/mysql_driver.h>
-	<jdbc/mysql_connection.h>
+	<windows.h>
+	<mysql.h>
+	<fstream>
 
 1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\mysql_driver.h
 	"cppconn/driver.h"
@@ -82,4 +83,27 @@
 1695601796 c:\mysql-connector-c++-8.2.0-winx64\include\jdbc\mysql_connection.h
 	"cppconn/connection.h"
 	<memory>
+
+1476069934 c:\program files (x86)\dev-cpp\mingw64\include\mysql.h
+	<sys/types.h>
+	<winsock.h>
+	"mysql_com.h"
+	"mysql_time.h"
+	"mysql_version.h"
+	"typelib.h"
+	"my_list.h"
+	"my_alloc.h"
+
+1476069948 c:\program files (x86)\dev-cpp\mingw64\include\mysql_com.h
+
+1476069974 c:\program files (x86)\dev-cpp\mingw64\include\mysql_time.h
+
+1476069984 c:\program files (x86)\dev-cpp\mingw64\include\mysql_version.h
+	<custom_conf.h>
+
+1476070124 c:\program files (x86)\dev-cpp\mingw64\include\typelib.h
+
+1476070170 c:\program files (x86)\dev-cpp\mingw64\include\my_list.h
+
+1476070178 c:\program files (x86)\dev-cpp\mingw64\include\my_alloc.h
 
