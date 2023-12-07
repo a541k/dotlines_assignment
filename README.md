@@ -2,7 +2,7 @@
 Assignment for Software Development Team - Deadline: December 5, 2023
 
 ## How To Run:
-	> Make sure you have 2222 port free for server. 
+	> Make sure you have '2222' port free for server. 
 ### 1. quick run server:
 	> i. run '.exe' file built in the directory "./bin/debug/" namely "dotlines_assignment.exe" (just the make sure the "libmysql.dll" is on the same directory as the .exe). it will open a console and you will see server is lisenting.. the program will wait 2 minutes for client requests and terminate if there is no incoming data from clients(idle shutdown time set to 120 sec for the program)
    	> ii. for database related operation make sure you have a mysql database running in port 3306 (for this project xampp localhost, mysql module with default config was used. if you have xampp installed you can just start the apache and mysql modules togather).
@@ -25,7 +25,7 @@ Assignment for Software Development Team - Deadline: December 5, 2023
 	> right click project-name under management and select add file recursively and add the main project directory(dotlines_assignement)
 ### 2. add mysql library and header files(included in 'files for cpp sqll' directory) with compiler. 
     	-put the 'libmysql.a' file from "files for cpp sql/libmysql.a/" directory in the compiler's 'lib' directory for example "..\..\..\..\..\Program Files (x86)\DevCpp\MinGW64\lib\libmysql.a".
-       	-put the sql header files from "files for cpp sql/mysqlheaders/" directory in the compiler's include directory for example "..\..\..\..\..\Program Files (x86)\Dev-Cpp\MinGW64\include"
+       	-put the sql header files from "files for cpp sql/mysqlheaders/" directory in the compiler's 'include' directory for example "..\..\..\..\..\Program Files (x86)\Dev-Cpp\MinGW64\include"
 ### 3. Linker and search directory settings
      	> this project uses windows socket library winsock2.h, link it with the linker-
        		- open 'project build options' select 'linker settings' and add "ws2_32".
