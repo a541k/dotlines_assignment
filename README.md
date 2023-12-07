@@ -1,12 +1,28 @@
 # dotlines-assignment
 Assignment for Software Development Team - Deadline: December 5, 2023
 
-# NB>
-## Database is exported in the database directory should be imported for the use. This is the server socket.
-## client socket program that sends data is a seperate project from this and will be in different git repo
+## How To Run:
+	> Make sure you have 2222 port free for server. 
+### quick run server:
+	> run '.exe' file built in the directory "./bin/debug/" namely "dotlines_assignment.exe" (just the make sure the "libmysql.dll" is on the same directory as the .exe)
+ 	> it will open a console and you will see server is lisenting.. the program will wait 2 minutes for client requests and terminate if there is no incoming data from clients(idle shutdown time set to 120 sec for the program)
+   	> for database related operation make sure you have a mysql database running in port 3306 (for this project xampp localhost, mysql module with default config was used. if you have xampp installed you can just start the apache and mysql modules togather).
+    		worth noting it is also expected that the database has below characteristics (default for xampp)-
+      			database_name = "user_information_database";
+			host = "localhost";
+			user = "root";
+			password = "";
+			port = 3306;
+   	> You can create a database named "user_information_database" and import the table structures and everything from "user_information_database.sql" source file located on "./database/" directory.
+### quick run client:
+  	> it has no dependency you can run the executable "client.exe" from the directory "./bin/debug".
+   	> it will open a console where you can create a data stuct and send it to server socket.
+    	> send data sturct while the server is running.
 
+## To re-build the project:
+	
 
-## Description:
+## Description of the assignment:
 You have a structure type called info defined as follows:
 
 	typedef struct user_info {
@@ -60,3 +76,6 @@ Sample Data Format:
 }
 
 
+# NB>
+## Database is exported in the database directory should be imported for the use. This is the server socket.
+## client socket program that sends data is a seperate project from this and will be in different git repo
