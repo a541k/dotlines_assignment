@@ -94,6 +94,6 @@ Sample Data Format:
 }
 
 
-### NB> 
+### NB:
 Database is exported in the database directory should be imported for the use. This is the server socket. 
 client socket program that sends data is a seperate project from this and will be in different git repo
