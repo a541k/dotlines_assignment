@@ -16,8 +16,9 @@ Assignment for Software Development Team - Deadline: December 5, 2023
 ### 2. quick run client:
   	> it has no dependency you can run the executable "client.exe" from the directory "./bin/debug".
    	> it will open a console where you can create a data stuct and send it to server socket.
-    	> send data sturct while the server is running.
-     <br />
+    > send data sturct while the server is running.
+<br />
+
 ## To re-build the sever project:
 ### 1. import the project
 	> open an empty project in codeblocks
