@@ -19,7 +19,7 @@ Assignment for Software Development Team - Deadline: December 5, 2023
     > send data sturct while the server is running.
 <br />
 
-## To re-build the sever project:
+## To re-build the server project:
 ### 1. import the project
 	> open an empty project in codeblocks
 	> right click project-name under management and select add file recursively and add the main project directory(dotlines_assignement)
