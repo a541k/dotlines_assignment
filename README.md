@@ -1,26 +1,43 @@
-# dotlines-assignment
+
 Assignment for Software Development Team - Deadline: December 5, 2023
 
 ## How To Run:
 	> Make sure you have 2222 port free for server. 
 ### 1. quick run server:
-	> run '.exe' file built in the directory "./bin/debug/" namely "dotlines_assignment.exe" (just the make sure the "libmysql.dll" is on the same directory as the .exe)
- 	> it will open a console and you will see server is lisenting.. the program will wait 2 minutes for client requests and terminate if there is no incoming data from clients(idle shutdown time set to 120 sec for the program)
-   	> for database related operation make sure you have a mysql database running in port 3306 (for this project xampp localhost, mysql module with default config was used. if you have xampp installed you can just start the apache and mysql modules togather).
+	> i. run '.exe' file built in the directory "./bin/debug/" namely "dotlines_assignment.exe" (just the make sure the "libmysql.dll" is on the same directory as the .exe). it will open a console and you will see server is lisenting.. the program will wait 2 minutes for client requests and terminate if there is no incoming data from clients(idle shutdown time set to 120 sec for the program)
+   	> ii. for database related operation make sure you have a mysql database running in port 3306 (for this project xampp localhost, mysql module with default config was used. if you have xampp installed you can just start the apache and mysql modules togather).
     		worth noting it is also expected that the database has below characteristics (default for xampp)-
       			database_name = "user_information_database";
 			host = "localhost";
 			user = "root";
 			password = "";
 			port = 3306;
-   	> You can create a database named "user_information_database" and import the table structures and everything from "user_information_database.sql" source file located on "./database/" directory.
+   	> iii. You can create a database named "user_information_database" and import the table structures and everything from "user_information_database.sql" source file located on "./database/" directory.
 ### 2. quick run client:
   	> it has no dependency you can run the executable "client.exe" from the directory "./bin/debug".
    	> it will open a console where you can create a data stuct and send it to server socket.
     	> send data sturct while the server is running.
+     <br />
+## To re-build the sever project:
+### 1. import the project
+	> open an empty project in codeblocks
+	> right click project-name under management and select add file recursively and add the main project directory(dotlines_assignement)
+### 2. add mysql library and header files(included in 'files for cpp sqll' directory) with compiler. 
+    	-put the 'libmysql.a' file from "files for cpp sql/libmysql.a/" directory in the compiler's 'lib' directory for example "..\..\..\..\..\Program Files (x86)\DevCpp\MinGW64\lib\libmysql.a".
+       	-put the sql header files from "files for cpp sql/mysqlheaders/" directory in the compiler's include directory for example "..\..\..\..\..\Program Files (x86)\Dev-Cpp\MinGW64\include"
+### 3. Linker and search directory settings
+     	> this project uses windows socket library winsock2.h, link it with the linker-
+       		- open 'project build options' select 'linker settings' and add "ws2_32".
+		> sql linker
+    		- add the path pf 'libmysql.a' file in the linker "..\..\..\..\..\Program Files (x86)\Dev-Cpp\MinGW64\lib\libmysql.a"
+       	> add the search directory for the sql headers under 'Search Directories' the path will be like "..\..\..\..\..\Program Files (x86)\Dev-Cpp\MinGW64\include"
+### 4. follow step (ii) and (iii) of quick run server to ensure database set up for the server. 
+<br />
 
-## To re-build the project:
-	
+## To re-build the client project:
+	just import the project like server
+<br />  			
+<br />
 
 ## Description of the assignment:
 You have a structure type called info defined as follows:
